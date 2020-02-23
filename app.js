@@ -26,13 +26,7 @@ app.get('/', (req, res) => {
   res.json(allRoutes(app))
 });
 
-// Handler for 404 -Resource Not Found
-//app.use((req, res, next) =>{
-//    res.status(404).send('we think you are lost!')
-//})
-
 require('./app/routes/members.routes.js')(app);
-
 
 // listen for requests
 app.listen(servicePort, () => {
