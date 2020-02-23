@@ -1,4 +1,4 @@
-# Summary.
+# Summary:
 - RESTful Node js service wrapper for the given github organization members with given followers count.  
 - Uses Node.js, express, axiom.
 
@@ -26,7 +26,7 @@
   - The time out parameter to github can be configured through app_config.json.
 
 ## prerequisites
-- Configure the app_config.json for github api, timeout etc.
+- Configure the app_config.json for github api endpoint information, timeout etc.
 
 ## Setup Information
 
