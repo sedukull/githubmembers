@@ -8,7 +8,6 @@ require('dotenv').config()
 
 log.setDefaultLevel(log.levels.INFO);
 
-
 const environment = process.env.NODE_ENV || 'development';
 const servicePort = appConfig[environment].port;
 
@@ -24,7 +23,7 @@ app.use(bodyParser.json())
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json(allRoutes(app))
+  res.json(allRoutes(app))
 });
 
 // Handler for 404 -Resource Not Found
@@ -37,5 +36,5 @@ require('./app/routes/members.routes.js')(app);
 
 // listen for requests
 app.listen(servicePort, () => {
-    log.info(`Service started. Port: ${servicePort}`);
+  log.info(`Service started. Port: ${servicePort}`);
 });

@@ -31,12 +31,12 @@ async function getMembers(organization) {
     return Array.from(res);
   }
 };
-  
+
 /**
  * Retrieves the followers count of a given github user.
  * @param {*} login 
  */
-const getFollowersCount = async(login) => {
+const getFollowersCount = async (login) => {
   var baseUrl = appConfig[environment].github_base_url;
   var timeOut = appConfig[environment].time_out;
   var uri = util.format("%s/users/%s/followers", baseUrl, login);
@@ -56,7 +56,7 @@ const getFollowersCount = async(login) => {
   }
   return 0;
 }
-  
+
 /**
  * Retrieves the github member followed by count. 
  * @param {*} login 
@@ -80,10 +80,10 @@ const getFollowedByCount = async (login) => {
   }
   return 0;
 }
-  
+
 function compare(a, b) {
-  return  Number(b['followers_count']) - Number(a['followers_count']);
-}      
+  return Number(b['followers_count']) - Number(a['followers_count']);
+}
 
 exports.findMembers = async (req, res) => {
 
@@ -111,11 +111,11 @@ exports.findMembers = async (req, res) => {
   var limit = 0
 
   if (req.params.limit) {
-    limit = Number(req.params.limit); 
+    limit = Number(req.params.limit);
   }
 
   orgMembersInformationList = [];
-  
+
   var members = await getMembers(orgName);
   for (i = 0; i < members.length; i++) {
     //log.info(member.login, member.avatar_url, member.followers_url, member.following_url);
@@ -126,7 +126,7 @@ exports.findMembers = async (req, res) => {
       'following_url': await getFollowedByCount(members[i].login)
     }
     )
-    if (limit !==0  && limit === orgMembersInformationList.length) {
+    if (limit !== 0 && limit === orgMembersInformationList.length) {
       break;
     }
   }

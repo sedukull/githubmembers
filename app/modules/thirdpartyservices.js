@@ -16,30 +16,30 @@ const environment = process.env.NODE_ENV || 'development';
  * Finds the github organization with a given name.
  */
 exports.findOrg = async (orgName) => {
-    var timeOut = appConfig[environment].time_out;
-    var baseUrl = appConfig[environment].github_base_url;
-    var uri = util.format("%s/orgs/%s", baseUrl, orgName);
+  var timeOut = appConfig[environment].time_out;
+  var baseUrl = appConfig[environment].github_base_url;
+  var uri = util.format("%s/orgs/%s", baseUrl, orgName);
 
-    log.debug(`=== Url: ${uri}. Org Name: ${orgName} ====`);
-    var options = {
-      url: uri,
-      method: 'GET',
-      headers: {
-        'User-Agent': 'request'
-      },
-      timeout: timeOut
-    };
-    return httpLibrary(options)
+  log.debug(`=== Url: ${uri}. Org Name: ${orgName} ====`);
+  var options = {
+    url: uri,
+    method: 'GET',
+    headers: {
+      'User-Agent': 'request'
+    },
+    timeout: timeOut
+  };
+  return httpLibrary(options)
     .then(res => {
-            if (res.status === 200) {
-                return res.data.name;
-            }
-            return "";
-        })
-    .catch(err => {log.error(err); return "";});
+      if (res.status === 200) {
+        return res.data.name;
+      }
+      return "";
+    })
+    .catch(err => { log.error(err); return ""; });
 }
 
 exports.callExternalUrl = async (options) => {
   log.info(options.url)
-  return httpLibrary(options).then(res => {return res.data}).catch(err => {console.error(err); return "";});
+  return httpLibrary(options).then(res => { return res.data }).catch(err => { console.error(err); return ""; });
 };
