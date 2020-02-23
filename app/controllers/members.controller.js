@@ -118,7 +118,7 @@ exports.findMembers = async (req, res) => {
 
   var members = await getMembers(orgName);
   for (i = 0; i < members.length; i++) {
-    //log.info(member.login, member.avatar_url, member.followers_url, member.following_url);
+    log.debug(member.login, member.avatar_url, member.followers_url, member.following_url);
     orgMembersInformationList.push({
       'login': members[i].login,
       'avatar_url': members[i].avatar_url,
