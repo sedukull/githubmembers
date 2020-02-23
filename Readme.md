@@ -25,7 +25,7 @@
   - The app access the default public github api.
   - The time out parameter to github can be configured through app_config.json.
 
-## prerequisites
+## pre-requisites
 - Configure the app_config.json for github api endpoint information, timeout etc.
 
 ## Setup Information
