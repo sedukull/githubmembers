@@ -38,7 +38,7 @@ describe('get members', () => {
     })
   });
 
-  it('fetch org members followers has login, avatarurl element', function(done) {
+  it('fetch git hub org members has login, avatarurl, following and followers count', function(done) {
     const res = request(server)
       .get('/orgs/xendit/members')
       .end((err, response) => {
