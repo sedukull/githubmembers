@@ -1,4 +1,4 @@
-# Summary:
+# Summary.
 - RESTful Node js service wrapper for the given github organization members with given followers count.  
 - Uses Node.js, express, axiom.
 
@@ -21,12 +21,13 @@
   - Returns all the endpoints implemented by the service.
  
 ## Additional Info
-  - No additional authentication mechanism to github api is provided.
   - The app access the default public github api.
   - The time out parameter to github can be configured through app_config.json.
 
-## pre-requisites
-- Configure the app_config.json for github api endpoint information, timeout etc.
+## prerequisites
+- Configure the app_config.json for github api, timeout etc.
+- App for now uses the github token to connect to github api. This needs to be configured under app_config.json under 'auth' section.
+- The best and secure way to store, retrieve API keys in a environment is through HSM. storing through config is not the correct way of doing it. For demo purpose, we store it here.
 
 ## Setup Information
 
