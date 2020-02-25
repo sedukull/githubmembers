@@ -1,7 +1,0 @@
-{
-    "development": {
-        "port": 2000,
-        "base_url": "Https://api.github.com",
-        "time_out": 1000
-    }
-}

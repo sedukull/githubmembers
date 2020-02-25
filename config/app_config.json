@@ -2,6 +2,10 @@
   "development": {   
       "port":3000,
       "time_out": 2000,
-      "github_base_url": "Https://api.github.com"
+      "github_base_url": "Https://api.github.com",
+      "auth":{
+        "use_auth_token": true,
+        "token": ""
+      }
     }
 }
